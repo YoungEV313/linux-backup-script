@@ -1,3 +1,12 @@
+# local configuration (contains host/user/key paths)
+config/backup.conf
+
+# runtime data - never commit
+data/*
 backups/*
 logs/*
-data/*
+state/*
+!data/.gitkeep
+!backups/.gitkeep
+!logs/.gitkeep
+!state/.gitkeep

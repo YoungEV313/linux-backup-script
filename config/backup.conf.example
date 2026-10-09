@@ -1,0 +1,21 @@
+# config/backup.conf - copy from backup.conf.example and edit.
+# $PROJECT_ROOT is provided by lib/common.sh.
+
+# --- What and where (local folders are only a staging area; the real copy lives on the server) ---
+SOURCE_DIR="$PROJECT_ROOT/data"
+BACKUP_DIR="$PROJECT_ROOT/backups"
+STATE_DIR="$PROJECT_ROOT/state"
+LOG_DIR="$PROJECT_ROOT/logs"
+BACKUP_NAME="daily"               # letters, digits, . _ - only
+
+# --- Backup policy ---
+FULL_EVERY_DAYS=7                 # "auto" mode: new full backup when the last one is this old
+KEEP_FULL_BACKUPS=4               # retention: keep the newest N sets (full + its incrementals)
+EXCLUDES=("*.tmp" "*.swp" ".cache")
+
+# --- Remote server (see docs/ssh-setup.md) ---
+REMOTE_USER="bkpuser"             # NOT "backup": that name is already a system account on Debian/Kali
+REMOTE_HOST="backup.example.com"
+REMOTE_PORT=22
+SSH_KEY="$HOME/.ssh/backup_ed25519"
+DELETE_AFTER_SEND=false           # true = remove the local copy once the server verified it
