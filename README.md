@@ -7,8 +7,15 @@ Python report tool.
 > Backups that stay on the machine they protect are not backups. Local folders are only a staging
 > area; the real copy lives on a server.
 
-## How it works
+## Documentation
 
+| Guide | Language |
+|---|---|
+| [Project guide (PDF, 11 pages)](docs/backup-system-guide-en.pdf) | English |
+| [راهنمای پروژه (PDF، ۱۱ صفحه)](docs/backup-system-guide-fa.pdf) | فارسی |
+| [SSH setup and security](docs/ssh-setup.md) | English |
+| [Roadmap](docs/roadmap.md) | English |
+## How it works
 ```
                         bin/run.sh   (the one command for cron)
                              |
